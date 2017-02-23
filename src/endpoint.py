@@ -1,13 +1,15 @@
 class Endpoint():
-	
-	def __init__(self, ld, cacheServers):
-		# self.ld      = Latence du Data Center vers l'Endpoint
-		# cacheServers = Listes des cacheServers connectes a l'Endpoint | format : Map < idCacheServer, Latence >
-		self.ld = ld
-		self.cacheServers = cacheServers
+    
+    def __init__(self, ld, caches):
+        # self.ld      = Latence du Data Center vers l'Endpoint
+        # caches = Listes des cacheServers connectes a l'Endpoint | format : Map < idCacheServer, Latence >
+        self.ld = ld
+        self.requests = []
+        self.caches = caches
 
-	def chooseCacheServer(self, video):
-		pass
+    def sortCaches(self):
+        pass
 
-	def sortCache(self):
-		return self.cacheServers.sort()
+    def chooseCache(self, video):
+        pass
+

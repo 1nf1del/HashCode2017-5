@@ -11,8 +11,8 @@ class Cache():
         """ Retourne le string au format attendu :
         id v1 v2 ... vn
         """
-        res = "{self.id}"
-        for video in videos:
+        res = str(self.id)
+        for video in self.videos:
             res += " " + video.id
         return res
 

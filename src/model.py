@@ -23,7 +23,7 @@ class Model():
         videoSizes = f.readline().split(" ")
         self.videos = []
         for i in range(videoCount):
-            self.videos.append(Video(i, videoSizes[i]))
+            self.videos.append(Video(i, int(videoSizes[i])))
 
         # Endpoints section
         self.endpoints = []
@@ -31,15 +31,24 @@ class Model():
             endpointLine = f.readline().split(" ")
             latency = int(endpointLine[0])
             availableCacheCount = int(endpointLine[1])
-            caches = {}
+            caches = []
             for j in range(availableCacheCount):
                 cacheLine = f.readline().split(" ")
-                caches[int(cacheLine[0])] = int(cacheLine[1])
+                cacheTuple = (self.caches[int(cacheLine[0])], int(cacheLine[1]))
+                caches.append(cacheTuple)
             self.endpoints.append(Endpoint(latency, caches))
 
         # Requests section
         self.requests = []
         for i in range(requestCount):
             requestLine = f.readline().split(" ")
-            self.requests.append(Request(self.videos[int(requestLine[0])],int(requestLine[2]),self.endpoints[int(requestLine[1])]))
+            videoId = int(requestLine[0])
+            endpointId = int(requestLine[1])
+            requestCount = int(requestLine[2])
+            request = Request(self.videos[videoId],self.endpoints[endpointId],requestCount)
+            self.requests.append(request)
+            self.endpoints[endpointId].requests.append(request)
+
+    def sortRequests(self):
+        pass
 
