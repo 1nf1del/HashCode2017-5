@@ -17,6 +17,11 @@ class Cache():
         return res
 
     def addVideo(self, video):
-        self.videos.append(video)
+        if (! self.willBeFull()):
+            self.videos.append(video)
 
-    
+    def removeVideo(self, video):
+        self.videos.remove(video)
+
+    def willBeFull(self, poids):
+        return True if (taille+poids > tailleMax) else False
