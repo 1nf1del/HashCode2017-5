@@ -1,10 +1,10 @@
 class Request():
 	
 	def __init__(self, video, nbReq, endpoint):
-		# self.video    = id de la video concernée
-		# self.nbReq    = nombre de requêtes venant de l'endpoint sur la video
-		# self.ratio    = nombre de requêtes / taille de la video
-		# self.endpoint = endpoint d'où proviennent les requêtes
+		# self.video    = id de la video concernee
+		# self.nbReq    = nombre de requetes venant de l'endpoint sur la video
+		# self.ratio    = nombre de requetes / taille de la video
+		# self.endpoint = endpoint d'ou proviennent les requetes
 		self.video = video
 		self.nbReq = nbReq
 		self.ratio = 0

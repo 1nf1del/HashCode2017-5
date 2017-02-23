@@ -1,10 +1,10 @@
 class Cache():
 
-    def __init__(self, id=0, tailleMax=0):
-    """ Constrcuteur de la classe Cache"""
+    def __init__(self, id=0, capacity=0):
+        """ Constrcuteur de la classe Cache """
         self.id = id
-        self.taille = taille
-        self.tailleMax = tailleMax
+        self.freeSpace = capacity
+        self.capacity = capacity
         self.videos = []
 
     def __str__(self):
@@ -17,11 +17,13 @@ class Cache():
         return res
 
     def addVideo(self, video):
-        if (! self.willBeFull()):
+        if self.hasEnoughSpace(video.size):
             self.videos.append(video)
+            self.freeSpace = self.freeSpace - video.size
 
     def removeVideo(self, video):
         self.videos.remove(video)
+        self.freeSpace = self.freeSpace + video.size
 
-    def willBeFull(self, poids):
-        return True if (taille+poids > tailleMax) else False
+    def hasEnoughSpace(self, size):
+        return True if (self.freeSpace >= size) else False

@@ -17,7 +17,7 @@ class Model():
         # Chaches
         self.caches = []
         for i in range(cacheCount):
-            caches.append(Cache(i, cacheCapacity))
+            self.caches.append(Cache(i, cacheCapacity))
 
         # Videos line
         videoSizes = f.readline().split(" ")
@@ -41,5 +41,5 @@ class Model():
         self.requests = []
         for i in range(requestCount):
             requestLine = f.readline().split(" ")
-            requests.append(Request(self.videos[int(requestLine[0])],int(requestLine),endpoints[int(requestLine[1])]))
+            self.requests.append(Request(self.videos[int(requestLine[0])],int(requestLine[2]),self.endpoints[int(requestLine[1])]))
 

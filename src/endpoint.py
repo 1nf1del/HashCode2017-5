@@ -2,7 +2,7 @@ class Endpoint():
 	
 	def __init__(self, ld, cacheServers):
 		# self.ld      = Latence du Data Center vers l'Endpoint
-		# cacheServers = Listes des cacheServers connectés à l'Endpoint | format : Map < idCacheServer, Latence >
+		# cacheServers = Listes des cacheServers connectes a l'Endpoint | format : Map < idCacheServer, Latence >
 		self.ld = ld
 		self.cacheServers = cacheServers
 
