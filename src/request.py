@@ -11,6 +11,6 @@ class Request():
 		self.endpoint = endpoint
 
 	def calcRatio(self):
-		ratio = nbReq / video.size
+		self.ratio = self.nbReq / self.video.size
 		pass
 		
