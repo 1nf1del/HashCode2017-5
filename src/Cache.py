@@ -1,6 +1,6 @@
 class Cache():
 
-    def __init__(self, id=0, taille=0, tailleMax=0):
+    def __init__(self, id=0, tailleMax=0):
     """ Constrcuteur de la classe Cache"""
         self.id = id
         self.taille = taille
@@ -18,3 +18,5 @@ class Cache():
 
     def addVideo(self, video):
         self.videos.append(video)
+
+    
