@@ -13,6 +13,7 @@ class Model():
 
     Methods:
     - sortRequests(): void
+    - score(): int
     """
 
     def __init__(self, f):
@@ -65,4 +66,12 @@ class Model():
         self.requests.sort(sortByRatio)
 
     def score(self):
-        pass
+        requestScores = []
+        for request in self.requests:
+            endpoint = request.endpoint
+            cache,cacheLatency = endpoint.caches[0]
+            datacenterLatency = endpoint.ld
+            dLatency = datacenterLatency - cacheLatency
+            requestScores.append(dLatency*request.nbReq*1000)
+        return floor(sum(requestScores)/len(requestScores))
+

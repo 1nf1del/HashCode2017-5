@@ -19,3 +19,5 @@ for filePath in sys.argv[1:]:
     outputFile.write(firstAlgo(model))
     print("Output file " + fileName + ".txt generated")
     outputFile.close()
+
+    print("Score: " + model.score())
