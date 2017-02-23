@@ -11,5 +11,7 @@ class Endpoint():
         pass
 
     def chooseCache(self, video):
-        pass
-
+    	# On trie le tableau
+    	cachesSorted = self.sortCaches()
+    	# On retourne le premier cacheServer : celui avec le ping le plus petit
+    	return cachesSorted[0][0]
