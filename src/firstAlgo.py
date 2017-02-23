@@ -8,8 +8,11 @@ def firstAlgo(model):
     for request in model.requests:
         vid = request.video
         request.endpoint.chooseCache(vid)
+    for cache in model.caches:
+        for video in model.videos:
+            if (video not in cache.videos):
+                cache.addVideo(video)
     finalString = ""
     for cache in model.caches:
-        finalString = finalString + str(cache) + "\n" 
+        finalString = finalString + str(cache) + "\n"
     return finalString
-

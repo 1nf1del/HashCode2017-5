@@ -50,5 +50,9 @@ class Model():
             self.endpoints[endpointId].requests.append(request)
 
     def sortRequests(self):
-        pass
+        def sortByRatio(x, y, attr=ratio):
+            return cmp(getattr(x, attr), getattr(y, attr))
+        self.requests.sort(sortByRatio)
 
+    def score(self):
+        pass
