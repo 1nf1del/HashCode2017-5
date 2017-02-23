@@ -1,3 +1,5 @@
+from model import Model
+
 def firstAlgo(model):
     "first algorithm"
     for endpoint in model.endpoints:
@@ -13,6 +15,7 @@ def firstAlgo(model):
             if (video not in cache.videos):
                 cache.addVideo(video)
     finalString = ""
+    finalString = finalString + str(len(model.caches)) + "\n"
     for cache in model.caches:
         finalString = finalString + str(cache) + "\n"
     return finalString

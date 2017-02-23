@@ -13,7 +13,7 @@ class Cache():
         """
         res = str(self.id)
         for video in self.videos:
-            res += " " + video.id
+            res = res + " " + str(video.id)
         return res
 
     def addVideo(self, video):
