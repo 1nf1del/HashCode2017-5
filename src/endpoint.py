@@ -1,5 +1,5 @@
 class Endpoint():
-    
+
     def __init__(self, ld, caches):
         # self.ld      = Latence du Data Center vers l'Endpoint
         # caches = Listes des cacheServers connectes a l'Endpoint | format : Map < idCacheServer, Latence >
@@ -8,8 +8,7 @@ class Endpoint():
         self.caches = caches
 
     def sortCaches(self):
-        pass
+        caches.sort(key=lambda tup: tup[1])
 
     def chooseCache(self, video):
         pass
-
