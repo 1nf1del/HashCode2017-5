@@ -2,6 +2,7 @@ from endpoint import Endpoint
 from video import Video
 from request import Request
 from cache import Cache
+import math
 
 class Model():
     """
@@ -73,5 +74,4 @@ class Model():
             datacenterLatency = endpoint.ld
             dLatency = datacenterLatency - cacheLatency
             requestScores.append(dLatency*request.nbReq*1000)
-        return floor(sum(requestScores)/len(requestScores))
-
+        return math.floor(sum(requestScores)/len(requestScores))

@@ -10,7 +10,7 @@ for filePath in sys.argv[1:]:
     inputFile = open(filePath)
     fileName,fileExtension = os.path.splitext(os.path.basename(filePath))
     outputFile = open(fileName + ".txt", "w")
-    
+
     print("Importing file " + fileName + fileExtension)
     model = Model(inputFile)
     print("Model imported")
@@ -20,4 +20,4 @@ for filePath in sys.argv[1:]:
     print("Output file " + fileName + ".txt generated")
     outputFile.close()
 
-    print("Score: " + model.score())
+    print("Score: " + str(model.score()))
