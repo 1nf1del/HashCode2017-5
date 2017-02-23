@@ -62,7 +62,7 @@ class Model():
 
     def sortRequests(self):
         def sortByRatio(x, y):
-            return cmp(x.ratio,y.ratio)
+            return cmp(x.ratio, y.ratio)
         self.requests.sort(sortByRatio)
 
     def score(self):

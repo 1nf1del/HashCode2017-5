@@ -10,4 +10,4 @@ class Endpoint():
 
     def chooseCache(self, video):
     	# On retourne le premier cacheServer : celui avec le ping le plus petit
-    	return cachesSorted[0][0]
+    	return self.caches[0][0]
