@@ -4,6 +4,16 @@ from request import Request
 from cache import Cache
 
 class Model():
+    """
+    Attributes:
+    - caches: Cache[]
+    - endpoints: Endpoint[]
+    - requests: Request[]
+    - videos: Video[]
+
+    Methods:
+    - sortRequests(): void
+    """
 
     def __init__(self, f):
         # First line
